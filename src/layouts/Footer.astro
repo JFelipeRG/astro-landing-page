@@ -19,35 +19,51 @@ const icons = iconDictionary();
 ---
 
 <footer
-  class="grid auto-cols-fr gap-x-8 gap-y-6 bg-hard-dark-blue p-9 text-white"
+  class="grid grid-cols-3 grid-rows-[1fr_min-content] gap-x-8 gap-y-6 bg-hard-dark-blue p-9 text-white"
 >
   <section class="flex flex-col items-center justify-between">
     <Logo />
     <div class="flex gap-6">
       {
         icons.map((icon) => (
-          <img class="h-5 w-5 hover:scale-125 cursor-pointer transition-all" src={icon.component} alt={`${icon.name} icon`} />
+          <img
+            class="h-5 w-5 cursor-pointer transition-all hover:scale-125"
+            src={icon.component}
+            alt={`${icon.name} icon`}
+          />
         ))
       }
     </div>
   </section>
   <section>
-    <ul>
-      {items.map((item) => <li>{item}</li>)}
+    <ul class="flex h-[150px] flex-col flex-wrap gap-4">
+      {items.map((item) => <li class="w-fit">{item}</li>)}
     </ul>
   </section>
-  <section>
-    <input type="text" placeholder="Updates in your inbox… " />
-    <button>Go</button>
-    <p>Copyright 2020. All Rights Reserved</p>
-  </section>
-  <section>
-    <p></p>
+  <section class="flex flex-col justify-between">
+    <div>
+      <input
+        class="mr-4 rounded-full px-4 py-2"
+        type="text"
+        placeholder="Updates in your inbox… "
+      />
+      <button
+        class="rounded-full bg-bright-red px-4 py-2 font-semibold hover:bg-bright-red/80"
+        >Go</button
+      >
+    </div>
+    <p class="opacity-50">Copyright 2020. All Rights Reserved</p>
   </section>
   <div class="col-span-3 text-center">
     Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-      >Frontend Mentor</a
-    >. Coded by <a href="#">Juan Felipe Ramirez</a>.
+    <a
+      class="text-bright-red hover:underline"
+      href="https://www.frontendmentor.io?ref=challenge"
+      target="_blank">Frontend Mentor</a
+    >. Coded by <a
+      class="text-bright-red hover:underline"
+      href="https://feliperamirez.netlify.app/"
+      target="_blank">Juan Felipe Ramirez</a
+    >.
   </div>
 </footer>
