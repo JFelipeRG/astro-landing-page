@@ -1,0 +1,53 @@
+---
+//Assets
+import Logo from "@components/icons/logo.astro";
+
+// Functions
+import { iconDictionary } from "@utils/library";
+
+const items = [
+  "Home",
+  "Pricing",
+  "Products",
+  "About Us",
+  "Careers",
+  "Community",
+  "Privacy Policy",
+];
+
+const icons = iconDictionary();
+---
+
+<footer
+  class="grid auto-cols-fr gap-x-8 gap-y-6 bg-hard-dark-blue p-9 text-white"
+>
+  <section class="flex flex-col items-center justify-between">
+    <Logo />
+    <div class="flex gap-6">
+      {
+        icons.map((icon) => (
+          <img class="h-5 w-5 hover:scale-125 cursor-pointer transition-all" src={icon.component} alt={`${icon.name} icon`} />
+        ))
+      }
+    </div>
+  </section>
+  <section>
+    <ul>
+      {items.map((item) => <li>{item}</li>)}
+    </ul>
+  </section>
+  <section>
+    <input type="text" placeholder="Updates in your inbox… " />
+    <button>Go</button>
+    <p>Copyright 2020. All Rights Reserved</p>
+  </section>
+  <section>
+    <p></p>
+  </section>
+  <div class="col-span-3 text-center">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      >Frontend Mentor</a
+    >. Coded by <a href="#">Juan Felipe Ramirez</a>.
+  </div>
+</footer>

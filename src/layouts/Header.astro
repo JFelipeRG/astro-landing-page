@@ -1,0 +1,25 @@
+---
+// Components
+import PrimaryButton from "@components/PrimaryButton.astro";
+
+// Assets
+import logoURL from "@assets/images/logo.svg";
+
+const items = ["Pricing", "Product", "About Us", "Careers", "Community"];
+---
+
+<header class="m-auto flex max-w-screen-xl gap-40 p-8">
+  <div>
+    <img src={logoURL} alt="Commerce logo" />
+  </div>
+  <nav class="grow">
+    <ul class="flex gap-12 text-dark-blue">
+      {
+        items.map((item) => (
+          <li class="hover:cursor-pointer hover:opacity-50">{item}</li>
+        ))
+      }
+    </ul>
+  </nav>
+  <PrimaryButton />
+</header>
