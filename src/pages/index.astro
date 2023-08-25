@@ -1,44 +1,26 @@
 ---
+// Layouts
 import Layout from "../layouts/Layout.astro";
+
+import Header from "src/layouts/Header.astro";
+import Footer from "src/layouts/Footer.astro";
+
+//Components
 import PrimaryButton from "@components/PrimaryButton.astro";
 
-/*	Assets		*/
-import logoURL from "@assets/images/logo.svg";
+// Assets
 import GraphIntro from "@assets/images/illustration-intro.svg";
 
-/*		Avatars		*/
+// Avatars
 import AnishaAvatar from "@assets/images/avatar-anisha.png";
 import AliAvatar from "@assets/images/avatar-ali.png";
 import RichardAvatar from "@assets/images/avatar-richard.png";
 import ShanaiAvatar from "@assets/images/avatar-shanai.png";
-
-/*    Icons   */
-import FacebookIcon from "@assets/images/icon-facebook.svg";
-import InstagramIcon from "@assets/images/icon-instagram.svg";
-import TwitterIcon from "@assets/images/icon-twitter.svg";
-import PinterestIcon from "@assets/images/icon-pinterest.svg";
-import YTIcon from "@assets/images/icon-youtube.svg";
 ---
 
 <Layout title="Landing Page | FrontEnd Mentor">
   <div id="app">
-    <header class="m-auto flex max-w-screen-xl gap-40 p-8">
-      <div>
-        <img src={logoURL} alt="Commerce logo" />
-      </div>
-      <nav class="grow">
-        <ul class="flex gap-12 text-dark-blue">
-          <li class="hover:cursor-pointer hover:text-dark-blue/50">Pricing</li>
-          <li class="hover:cursor-pointer hover:text-dark-blue/50">Product</li>
-          <li class="hover:cursor-pointer hover:text-dark-blue/50">About Us</li>
-          <li class="hover:cursor-pointer hover:text-dark-blue/50">Careers</li>
-          <li class="hover:cursor-pointer hover:text-dark-blue/50">
-            Community
-          </li>
-        </ul>
-      </nav>
-      <PrimaryButton />
-    </header>
+    <Header />
     <main>
       <section class="m-auto max-w-screen-xl columns-2 p-4">
         <div class="flex flex-col gap-y-8">
@@ -117,43 +99,47 @@ import YTIcon from "@assets/images/icon-youtube.svg";
         </section>
       </section>
       <section>
-        <h1>What they’ve said</h1>
-        <div>
-          <img src={AnishaAvatar} alt="Anisha Avatar" />
-          <b>Anisha Li</b>
-          <p>
-            “Manage has supercharged our team’s workflow. The ability to
-            maintain visibility on larger milestones at all times keeps everyone
-            motivated.”
-          </p>
-        </div>
-        <div>
-          <img src={AliAvatar} alt="Ali Avatar" />
-          <b>Ali Bravo</b>
-          <p>
-            “We have been able to cancel so many other subscriptions since using
-            Manage. There is no more cross-channel confusion and everyone is
-            much more focused.”
-          </p>
-        </div>
-        <div>
-          <img src={RichardAvatar} alt="Richard Avatar" />
-          <b>Richard Watts</b>
-          <p>
-            “Manage allows us to provide structure and process. It keeps us
-            organized and focused. I can’t stop recommending them to everyone I
-            talk to!”
-          </p>
-        </div>
-        <div>
-          <img src={ShanaiAvatar} alt="Shanai Avatar" />
-          <b>Shanai Gough</b>
-          <p>
-            “Their software allows us to track, manage and collaborate on our
-            projects from anywhere. It keeps the whole team in-sync without
-            being intrusive.”
-          </p>
-        </div>
+        <h1 class="text-center text-5xl font-bold leading-tight text-dark-blue">
+          What they’ve said
+        </h1>
+        <section class="flex snap-x px-9 snap-mandatory gap-9 overflow-x-auto">
+          <div class="min-w-[500px] snap-center bg-gray-500 px-8 py-5">
+            <img src={AnishaAvatar} alt="Anisha Avatar" />
+            <b>Anisha Li</b>
+            <p>
+              “Manage has supercharged our team’s workflow. The ability to
+              maintain visibility on larger milestones at all times keeps
+              everyone motivated.”
+            </p>
+          </div>
+          <div class="min-w-[500px] snap-center bg-gray-500 px-8 py-5">
+            <img src={AliAvatar} alt="Ali Avatar" />
+            <b>Ali Bravo</b>
+            <p>
+              “We have been able to cancel so many other subscriptions since
+              using Manage. There is no more cross-channel confusion and
+              everyone is much more focused.”
+            </p>
+          </div>
+          <div class="min-w-[500px] snap-center bg-gray-500 px-8 py-5">
+            <img src={RichardAvatar} alt="Richard Avatar" />
+            <b>Richard Watts</b>
+            <p>
+              “Manage allows us to provide structure and process. It keeps us
+              organized and focused. I can’t stop recommending them to everyone
+              I talk to!”
+            </p>
+          </div>
+          <div class="min-w-[500px] snap-center bg-gray-500 px-8 py-5">
+            <img src={ShanaiAvatar} alt="Shanai Avatar" />
+            <b>Shanai Gough</b>
+            <p>
+              “Their software allows us to track, manage and collaborate on our
+              projects from anywhere. It keeps the whole team in-sync without
+              being intrusive.”
+            </p>
+          </div>
+        </section>
         <PrimaryButton />
       </section>
       <section>
@@ -161,40 +147,6 @@ import YTIcon from "@assets/images/icon-youtube.svg";
         <PrimaryButton />
       </section>
     </main>
-    <footer class="bg-hard-dark-blue">
-      <section>
-        <img src={logoURL} alt="Commerce logo" />
-        <div>
-          <img src={FacebookIcon} alt="Facebook icon" />
-          <img src={YTIcon} alt="Youtube icon" />
-          <img src={TwitterIcon} alt="Twitter icon" />
-          <img src={PinterestIcon} alt="Pinterest icon" />
-          <img src={InstagramIcon} alt="Instagram icon" />
-        </div>
-      </section>
-      <section>
-        <ul>
-          <li>Home</li>
-          <li>Pricing</li>
-          <li>Products</li>
-          <li>About Us</li>
-          <li>Careers</li>
-          <li>Community</li>
-          <li>Privacy Policy</li>
-        </ul>
-      </section>
-      <input type="text" placeholder="Updates in your inbox… " />
-      <button>Go</button>
-      <p>Copyright 2020. All Rights Reserved</p>
-      <section>
-        <p></p>
-      </section>
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
-      </div>
-    </footer>
+    <Footer />
   </div>
 </Layout>
